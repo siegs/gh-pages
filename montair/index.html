@@ -26,14 +26,109 @@
 .hero{padding:92px 0 83px;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.eyebrow{text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:.19em;color:var(--muted)}h1{font-size:clamp(58px,7.8vw,109px);font-weight:760;letter-spacing:-.09em;line-height:.98;margin:18px 0 27px}h1 em{font-style:normal;color:#81a06d}.hero p{font-size:19px;line-height:1.65;max-width:565px;color:#3e5a50;margin:0}.pill{margin-top:30px;display:inline-flex;align-items:center;gap:9px;border:1px solid #c9d5c7;background:#f0f5e6;border-radius:40px;padding:10px 15px;font-size:13px;font-weight:650}.pill i{width:7px;height:7px;background:#77a05b;border-radius:50%}.art{aspect-ratio:1;border-radius:50% 50% 44% 56% / 46% 50% 50% 54%;background:var(--lime);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.art:before,.art:after{content:"";position:absolute;background:#88a66c;border-radius:999px;transform:rotate(-32deg)}.art:before{width:31%;height:58%;top:13%;left:26%}.art:after{width:28%;height:53%;top:39%;left:48%;background:#3f745f;transform:rotate(30deg)}.art .seed{position:absolute;width:20px;height:20px;background:var(--cream);border-radius:50%;z-index:2;bottom:27%;left:41%}
 .section{padding:73px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;align-items:start;justify-content:space-between;gap:40px;margin-bottom:30px}.sectionhead h2{margin:10px 0 0;font-size:clamp(31px,4vw,51px);font-weight:740;line-height:1.13;letter-spacing:-.06em}.sectionhead p{font-size:15px;line-height:1.6;max-width:330px;color:var(--muted);margin:12px 0 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{padding:28px;background:var(--light);border:1px solid #e3e8dc;border-radius:17px;display:flex;flex-direction:column;min-height:275px}.num{font-weight:730;font-size:12px;color:#668771}.card h3{font-size:22px;line-height:1.24;letter-spacing:-.035em;margin:26px 0 12px}.card p{font-size:15px;color:#49645a;line-height:1.55;margin:0 0 30px}.card a,.source a{font-weight:700;font-size:13px}.card a{margin-top:auto}.panel{background:var(--ink);color:var(--cream);padding:41px;border-radius:20px;display:grid;grid-template-columns:1fr 210px;gap:30px}.panel h3{font-weight:730;font-size:30px;letter-spacing:-.04em;line-height:1.15;margin:14px 0}.panel p{max-width:660px;font-size:16px;line-height:1.7;color:#d0ddd2;margin:0}.status{border:1px solid #668673;color:var(--lime);border-radius:10px;padding:17px;align-self:start;text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}.notes{margin-top:21px;color:var(--muted);font-size:13px;line-height:1.55}.source{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}.source b{width:38px;font-size:12px;color:var(--muted)}.source div{flex:1;font-size:16px;line-height:1.55}.source a{white-space:nowrap}.closing{border-radius:20px;background:var(--lime);padding:40px;display:flex;justify-content:space-between;align-items:center;gap:45px}.closing h2{font-size:35px;letter-spacing:-.055em;margin:0 0 11px}.closing p{margin:0;color:#3e5a50;line-height:1.55}.contact{white-space:nowrap;border-radius:50px;padding:17px 23px;background:var(--ink);color:var(--cream);text-decoration:none;font-size:13px;font-weight:750}footer{padding:40px 0 53px;font-size:12px;color:var(--muted);line-height:1.7;display:flex;justify-content:space-between;gap:25px}
 @media(max-width:800px){header{padding:17px 0}.nav a:first-child{display:none}.hero{padding:60px 0 55px;grid-template-columns:1fr}.hero p{font-size:17px}.art{display:none}.section{padding:55px 0}.sectionhead{display:block}.cards{grid-template-columns:1fr}.card{min-height:0}.card h3{margin:17px 0 10px}.card p{margin-bottom:20px}.panel{grid-template-columns:1fr;padding:29px}.status{text-align:left}.closing{display:block;padding:29px}.contact{display:inline-block;margin-top:25px}.source{flex-wrap:wrap}.source a{margin-left:54px}footer{display:block}}
+
+/* Mobile-first refinements: quicker reading, accessible targets, clearer status */
+:root{--accent:#a8c17d;--shadow:0 16px 48px rgba(25,63,54,.07)}
+html{scroll-padding-top:24px}
+a:focus-visible,button:focus-visible{outline:3px solid #9bbb72;outline-offset:4px;border-radius:5px}
+.identity{flex-shrink:0}
+.header-follow{display:none;text-decoration:none;border:1px solid var(--line);font-size:13px;font-weight:750;border-radius:999px;padding:12px 15px;white-space:nowrap}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:27px}
+.action-primary,.action-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 19px;border-radius:999px;font-size:14px;font-weight:750;text-decoration:none;line-height:1.2;transition:transform .2s}
+.action-primary{background:var(--ink);color:#fffdf6}
+.action-secondary{background:transparent;color:var(--ink);border:1px solid #b9c7b7}
+.action-primary:hover,.action-secondary:hover{transform:translateY(-2px)}
+.intro-kicker{margin:0 0 8px;color:var(--muted);font-size:14px;font-weight:650}
+.section-kicker{font-size:13px;color:#608065;line-height:1.5}
+.follow-section{border-top:0;padding:18px 0 72px}
+.follow-card{background:#dfebce;border:1px solid #d1e2ba;border-radius:26px;overflow:hidden;padding:52px 55px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative}
+.follow-card:after{content:"";position:absolute;width:230px;height:230px;border:35px solid rgba(96,139,86,.1);border-radius:50%;top:-125px;right:70px;pointer-events:none}
+.follow-card h2{font-size:clamp(33px,4.6vw,56px);line-height:1.08;letter-spacing:-.06em;margin:10px 0 16px}
+.follow-card p{max-width:575px;line-height:1.65;color:#47684e;font-size:16px;margin:0}
+.follow-card small{display:block;margin-top:13px;color:#5e765b;font-size:12px;line-height:1.5}
+.follow-card .action-primary{min-width:165px;min-height:54px}
+.section:target,.follow-section:target{scroll-margin-top:16px}
+.source{min-width:0}.source div{min-width:0;overflow-wrap:anywhere}
+.source a{min-height:44px;display:inline-flex;align-items:center}
+.mobile-status{display:none}
+.contact{display:inline-flex;align-items:center;justify-content:center;min-height:48px}
+footer{border-top:1px solid var(--line)}
+@media(max-width:950px) and (min-width:701px){
+ .shell{width:calc(100% - 50px)}.hero{gap:24px;padding:70px 0}.hero h1{font-size:clamp(65px,8.8vw,90px)}
+ .nav a{margin-left:13px}.cards{gap:10px}.card{padding:20px}.card h3{font-size:19px}
+ .follow-card{padding:38px}
+}
+@media(max-width:700px){
+ body{overflow-x:hidden}
+ .shell{width:calc(100% - 38px);max-width:520px}
+ header{min-height:75px;padding:12px 0;gap:8px}
+ .identity{font-size:19px;gap:8px;letter-spacing:-.045em}
+ .emblem{width:31px;height:31px;font-size:17px}
+ .nav{display:none}
+ .header-follow{display:inline-flex;align-items:center;justify-content:center;padding:11px 13px;min-height:43px;border-color:#c4d2c4;background:#eef4e5}
+ .hero{padding:45px 0 46px;display:block}
+ .hero .eyebrow{font-size:10px;letter-spacing:.12em;line-height:1.7;max-width:330px}
+ .hero h1{font-size:clamp(43px,10.8vw,66px);line-height:1.025;letter-spacing:-.075em;margin:17px 0 20px}
+ .hero p{font-size:16px;line-height:1.6;max-width:490px}
+ .hero-actions{margin-top:24px;gap:9px}
+ .hero-actions a{flex:1;min-width:135px;padding:13px 12px;font-size:13px;text-align:center}
+ .pill{font-size:11px;line-height:1.35;padding:9px 12px;margin-top:24px;max-width:100%}
+ .art{display:none}
+ .section{padding:49px 0}
+ .sectionhead{display:block;margin-bottom:22px}
+ .sectionhead h2{font-size:clamp(31px,8.4vw,42px);line-height:1.09;margin:9px 0 12px}
+ .sectionhead p{max-width:510px;font-size:15px;line-height:1.55}
+ .eyebrow{font-size:10px;letter-spacing:.16em}
+ .cards{display:flex;flex-direction:column;gap:10px}
+ .card{min-height:0;padding:21px 21px 17px;border-radius:16px}
+ .card .num{font-size:11px}
+ .card h3{font-size:21px;margin:12px 0 9px;line-height:1.19}
+ .card p{font-size:14px;line-height:1.55;margin-bottom:15px}
+ .card a{font-size:13px;min-height:36px;display:inline-flex;align-items:center}
+ .panel{padding:25px 23px;border-radius:18px;gap:17px;display:flex;flex-direction:column}
+ .panel h3{font-size:clamp(24px,6.6vw,30px);line-height:1.16;margin:12px 0}
+ .panel p{font-size:15px;line-height:1.58}
+ .status{padding:10px 13px;align-self:flex-start;text-align:left;font-size:10px;border-radius:999px}
+ .notes{margin-top:17px;font-size:13px;line-height:1.55}
+ .follow-section{padding:0 0 48px}
+ .follow-card{display:block;border-radius:20px;padding:31px 25px}
+ .follow-card:after{width:145px;height:145px;top:-98px;right:-50px}
+ .follow-card h2{font-size:clamp(31px,8.3vw,43px);max-width:430px}
+ .follow-card p{font-size:15px;line-height:1.6}
+ .follow-card .action-primary{margin-top:22px;width:100%;font-size:14px}
+ .follow-card small{margin-top:14px}
+ .source{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:10px;align-items:start;padding:17px 0}
+ .source b{width:auto;padding-top:2px}
+ .source div{font-size:14px;line-height:1.5}
+ .source a{font-size:12px;white-space:nowrap;min-height:24px;margin:0}
+ .closing{padding:27px 23px;border-radius:17px}
+ .closing h2{font-size:29px;line-height:1.12}
+ .closing p{font-size:14px}
+ .contact{display:flex;width:100%;margin-top:21px;white-space:normal}
+ footer{display:block;padding:26px 0 38px;font-size:12px;line-height:1.6}
+ footer div+div{margin-top:11px}
+}
+@media(max-width:365px){
+ .shell{width:calc(100% - 30px)}
+ .identity{font-size:17px}
+ .header-follow{font-size:12px;padding:10px 11px}
+ .hero h1{font-size:clamp(38px,10.6vw,43px)}
+ .hero-actions{flex-direction:column;align-items:stretch}
+ .hero-actions a{min-width:0}
+ .source{grid-template-columns:23px minmax(0,1fr)}
+ .source a{grid-column:2}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.action-primary,.action-secondary{transition:none}}
+
 </style></head><body><div class="shell">
-<header><a href="#top" class="identity"><span class="emblem">✳</span> montair <span style="font-weight:400;opacity:.55">/ wellness</span></a><nav class="nav"><a href="#commitments">Commitments</a><a href="#questions">Open questions</a><a href="#sources">Sources</a></nav></header>
-<main id="top"><section class="hero"><div><div class="eyebrow">Independent community resource · Danville, California</div><h1>Good food.<br><em>Healthy kids.</em></h1><p>A clearer view of the nutrition and wellness commitments that help our school community thrive. We’re celebrating what’s in place, pointing to primary sources, and tracking a few thoughtful questions along the way.</p><span class="pill"><i></i>Parent-created · Updated October 23, 2026</span></div><div class="art" aria-hidden="true"><span class="seed"></span></div></section>
+<header><a href="#top" class="identity"><span class="emblem">✳</span> montair <span style="font-weight:400;opacity:.55">/ wellness</span></a><nav class="nav" aria-label="Sections"><a href="#commitments">Commitments</a><a href="#questions">Open questions</a><a href="#sources">Sources</a><a href="#follow">Updates</a></nav><a class="header-follow" href="#follow">Get updates ↗</a></header>
+<main id="top"><section class="hero"><div><div class="eyebrow">Independent community resource · Danville, California</div><h1>Good food.<br><em>Healthy kids.</em></h1><p>A clearer view of the nutrition and wellness commitments that help our school community thrive. We’re celebrating what’s in place, pointing to primary sources, and tracking a few thoughtful questions along the way.</p><div class="hero-actions"><a href="#follow" class="action-primary">Follow updates ↗</a><a href="#questions" class="action-secondary">What we're tracking ↓</a></div><span class="pill"><i></i>Parent-created · Updated October 23, 2026</span></div><div class="art" aria-hidden="true"><span class="seed"></span></div></section>
 <section class="section" id="commitments"><div class="sectionhead"><div><span class="eyebrow">01 / The foundation</span><h2>What’s established</h2></div><p>These district-wide commitments are documented in publicly available SRVUSD materials.</p></div><div class="cards">
 <article class="card"><span class="num">01</span><h3>A published wellness policy</h3><p>SRVUSD maintains a student wellness policy to support healthier learning environments.</p><a href="https://www.srvusd.net/Departments/Business-Services/Child-Nutrition/Wellness-Resources/index.html" target="_blank" rel="noopener">District wellness resources ↗</a></article>
 <article class="card"><span class="num">02</span><h3>More than the lunch menu</h3><p>The district identifies nutrition education, physical activity, and school-based wellness activities as core areas.</p><a href="https://www.srvusd.net/Departments/Business-Services/Child-Nutrition/Wellness-Resources/index.html" target="_blank" rel="noopener">Explore key policy areas ↗</a></article>
 <article class="card"><span class="num">03</span><h3>Regular public evaluation</h3><p>SRVUSD reports completing a triennial assessment during the 2023–24 school year.</p><a href="https://www.srvusd.net/Departments/Business-Services/Child-Nutrition/Wellness-Resources/index.html" target="_blank" rel="noopener">Review district assessment ↗</a></article></div></section>
 <section class="section" id="questions"><div class="sectionhead"><div><span class="eyebrow">02 / Staying curious</span><h2>Questions we’re following</h2></div><p>Open questions are marked as such; they’re not presented as confirmed findings.</p></div><div class="panel"><div><span class="eyebrow" style="color:var(--lime)">Current inquiry</span><h3>Who is Montair’s school-site wellness contact?</h3><p>We’ve requested clarification on the current school-level wellness representative/contact and how families can participate in local wellness efforts. We’ll publish a dated update when the district confirms the answer.</p></div><div class="status">Awaiting clarification</div></div><p class="notes">Also being checked: the name, issuer, date, and criteria of the school’s reported gold-level recognition. We’ll celebrate the details once the primary source is confirmed.</p></section>
+<section class="follow-section" id="follow"><div class="follow-card"><div><span class="eyebrow">Stay in the loop</span><h2>Good things grow when we stay connected.</h2><p>Occasional, practical updates on school nutrition, district wellness commitments, and answers to open questions. No clutter—just what matters.</p><small>Parent-created and independent. Email addresses stay private. Unsubscribe anytime.</small></div><a class="action-primary signup-link" href="#follow">Get email updates ↗</a></div></section>
 <section class="section" id="sources"><div class="sectionhead"><div><span class="eyebrow">03 / Transparency</span><h2>Explore the sources</h2></div><p>Direct links to public materials, rather than secondhand summaries.</p></div>
 <div class="source"><b>01</b><div>SRVUSD · Child Nutrition / Wellness Resources</div><a href="https://www.srvusd.net/Departments/Business-Services/Child-Nutrition/Wellness-Resources/index.html" target="_blank" rel="noopener">Read ↗</a></div>
 <div class="source"><b>02</b><div>SRVUSD Board · 2024 Triennial Assessment presentation (Jan 2025)</div><a href="https://srvusd.community.diligentoneplatform.com/document/b06ac4bd-0374-4ac0-91d7-b69a347f6000/" target="_blank" rel="noopener">Read ↗</a></div>
