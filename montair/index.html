@@ -66,16 +66,14 @@ footer{border-top:1px solid var(--line)}
  .emblem{width:31px;height:31px;font-size:17px}
  .nav{display:none}
  .header-follow{display:inline-flex;align-items:center;justify-content:center;padding:11px 13px;min-height:43px;border-color:#c4d2c4;background:#eef4e5}
- .hero{padding:45px 0 46px;display:grid;grid-template-columns:minmax(0,1fr) 64px;column-gap:12px;row-gap:0}
- .hero-copy{display:contents}
- .hero-copy>*{grid-column:1/-1}
+ .hero{padding:45px 0 46px;display:block}
  .hero .eyebrow{font-size:10px;letter-spacing:.12em;line-height:1.7;max-width:330px}
  .hero h1{font-size:clamp(43px,10.8vw,66px);line-height:1.025;letter-spacing:-.075em;margin:17px 0 20px}
  .hero p{font-size:16px;line-height:1.6;max-width:490px}
- .hero-actions{margin-top:24px;gap:9px}
- .hero-actions a{flex:1;min-width:135px;padding:13px 12px;font-size:13px;text-align:center}
- .pill{grid-column:1;grid-row:5;font-size:11px;line-height:1.35;padding:9px 12px;margin-top:24px;max-width:100%;justify-self:start}
- .art{grid-column:2;grid-row:5;align-self:center;width:64px;margin-top:24px}
+ .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;margin-top:24px;gap:10px}
+ .hero-actions a{min-width:0;min-height:48px;padding:12px 8px;font-size:14px;line-height:1.2;white-space:nowrap;text-align:center;gap:6px}
+ .pill{font-size:11px;line-height:1.5;padding:0;margin-top:18px;max-width:100%;border:0;border-radius:0;background:none;color:var(--muted)}
+ .art{display:none}
  .section{padding:49px 0}
  .sectionhead{display:block;margin-bottom:22px}
  .sectionhead h2{font-size:clamp(31px,8.4vw,42px);line-height:1.09;margin:9px 0 12px}
@@ -115,8 +113,6 @@ footer{border-top:1px solid var(--line)}
  .identity{font-size:17px}
  .header-follow{font-size:12px;padding:10px 11px}
  .hero h1{font-size:clamp(38px,10.6vw,43px)}
- .hero-actions{flex-direction:column;align-items:stretch}
- .hero-actions a{min-width:0}
  .source{grid-template-columns:23px minmax(0,1fr)}
  .source a{grid-column:2}
 }
@@ -150,7 +146,7 @@ footer{border-top:1px solid var(--line)}
       <div class="eyebrow">Parent-created community resource · Danville, California</div>
       <h1>Good food.<br><em>Healthy kids.</em></h1>
       <p>Celebrating Montair’s school food program and sharing the nutrition guidance and wellness commitments available to our community.</p>
-      <div class="hero-actions"><a href="#meals" class="action-primary">Explore school meals ↓</a><a href="#follow" class="action-secondary">Get updates ↗</a></div>
+      <div class="hero-actions"><a href="#meals" class="action-primary">School meals <span aria-hidden="true">↓</span></a><a href="#follow" class="action-secondary">Get updates <span aria-hidden="true">↗</span></a></div>
       <span class="pill"><i></i>Sources reviewed · October 25, 2026</span>
     </div>
     <div class="art"><img src="assets/roadrunner-hero.webp" width="1254" height="1254" alt="Montair’s smiling blue roadrunner mascot against a soft green backdrop." fetchpriority="high" decoding="async"></div>
