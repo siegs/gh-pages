@@ -6,7 +6,7 @@
   const query = new URLSearchParams(location.search);
   const test = query.get('analytics_test') === '1';
   if (query.get('analytics') === 'off' || navigator.globalPrivacyControl || navigator.doNotTrack === '1' || (navigator.webdriver && !test)) return;
-  const endpoint = 'https://bp5030-analytics.siegs.chatgpt.site/api/collect';
+  const endpoint = 'https://bp5030-collector.siegs.chatgpt.site/api/collect';
   const read = (key) => { try { return localStorage.getItem(key); } catch (_) { return null; } };
   const write = (key,value) => { try { localStorage.setItem(key,value); } catch (_) {} };
   const uuid = () => crypto.randomUUID();
