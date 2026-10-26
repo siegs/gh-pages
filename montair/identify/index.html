@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#193f36"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20261025"><title>Identify your personal browser · BP5030</title>
+<style>body{margin:0;background:#fffdf6;color:#193f36;font:16px/1.6 system-ui,sans-serif}main{max-width:620px;margin:12vh auto;padding:28px}h1{font-size:36px;line-height:1.1;letter-spacing:-.045em}p{color:#5d716a}a{color:inherit;font-weight:650}small{font-size:12px}</style></head>
+<body><main><small>BP5030 / PRIVATE ANALYTICS</small><h1>Identifying this browser…</h1><p id="status">Opening the private dashboard so you can label this browser and exclude its visits from the totals.</p><p><a id="continue" href="https://bp5030-analytics.siegs.chatgpt.site">Continue to the private dashboard ↗</a></p><noscript><p>JavaScript is needed to match this browser to its past visits.</p></noscript></main>
+<script>
+(() => {
+ 'use strict';
+ try {
+  let id=localStorage.getItem('bp5030.visitor');
+  if(!id||!/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(id)){id=crypto.randomUUID();localStorage.setItem('bp5030.visitor',id);}
+  const device=/iPad|Tablet/i.test(navigator.userAgent)?'tablet':/Mobi|Android|iPhone/i.test(navigator.userAgent)?'mobile':'desktop';
+  const target=new URL('https://bp5030-analytics.siegs.chatgpt.site/identify');
+  target.searchParams.set('visitor',id);target.searchParams.set('device',device);
+  document.getElementById('continue').href=target.href;
+  location.replace(target.href);
+ }catch(_){document.getElementById('status').textContent='Browser storage is unavailable, so this browser cannot be matched automatically. You can label a recognized history in the private dashboard.';}
+})();
+</script></body></html>
